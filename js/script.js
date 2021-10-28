@@ -45,7 +45,7 @@ let numeriAlert = [];
 let inputContainer = [];
 let confrontoArrays = [];
 
-while (numeriAlert.length < 3) {
+while (numeriAlert.length < 5) {
     const numeroAlert = generateRandomNum();
     numeriAlert.push(numeroAlert);
 }
@@ -55,19 +55,20 @@ alert(numeriAlert);
 
 const timer = setTimeout(function () {
 
-    while (inputContainer < 3) {
+    while (inputContainer < 5) {
         const numeriInput = prompt("Inserisci i numeri dell'alert: ");
         let numeriPerArray = numeriInput.split(" ");
-        inputContainer.push(numeriPerArray);
+        inputContainer.push(...numeriPerArray);
+        // console.log(numeriPerArray);
     }
     console.log(`Array di numeri inseriti dall'utente ${inputContainer}`);
     for (let i = 0; i < inputContainer.length; i++) {
-        const numeroInput = inputContainer[i];
+        const numeroInput = parseInt(inputContainer[i]);
 
         if (numeriAlert.includes(numeroInput)) {
             confrontoArrays.push(numeroInput);
-            console.log(`hai indovinato ${confrontoArrays.length} su 5`);
         }
     }
+    console.log(`hai indovinato ${confrontoArrays.length} su 5`);
 
 }, 1000);
