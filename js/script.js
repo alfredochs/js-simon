@@ -66,6 +66,7 @@ const timer = setTimeout(function () {
 
         if (numeriAlert.includes(numeroInput)) {
             confrontoArrays.push(numeroInput);
+            console.log(`hai indovinato ${confrontoArrays.length} su 5`);
         }
     }
 
